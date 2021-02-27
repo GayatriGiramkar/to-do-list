@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     ListComponent,
     EnterComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     Ng2SearchPipeModule,
     Ng2OrderModule,
     FormsModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
    ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { from } from 'rxjs';
 import { CommonService } from '../common.service';
+import { List } from '../server/list'
 
 @Component({
   selector: 'app-list',
@@ -12,6 +13,9 @@ export class ListComponent implements OnInit {
   public collection : any;
   time = new Date();
   item:any;
+  searchValue: any;
+  list: List []=[];
+  
   addList = new FormGroup ({
     item: new FormControl(''),
     time: new FormControl('')
@@ -25,15 +29,10 @@ export class ListComponent implements OnInit {
     });
   }
 
-  // Search(){
-  //   if(this.item == ""){
-  //     this.ngOnInit();
-  //   }else{
-  //     this.addList = this.addList
-  //     this.filter((res: { item: string; }) => {
-  //       return res.item.toLocaleLowerCase().match(this.item.toLocaleLowerCase());
-  //     });
-  //   }
-  // }
-
+  key:string = 'id';
+  reverse: boolean = false;
+  sort(key: string){
+    this.key= key;
+    this.reverse = !this.reverse;
+  }
 }
